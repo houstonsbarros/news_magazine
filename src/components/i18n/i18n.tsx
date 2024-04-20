@@ -48,7 +48,6 @@ const FlagsContainer = styled.div`
 const Button = styled.button`
   background-color: transparent;
   padding: 0.5rem 1rem;
-  border-radius: ${(props) => props.theme.border.radius};
   border: none;
   color: ${(props) => props.theme.colors.gray[300]};
   font-size: ${(props) => props.theme.font.sizes.small};

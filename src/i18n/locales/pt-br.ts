@@ -9,5 +9,14 @@ export default {
     home: {
       message: "Olá Mundo!",
     },
+    recents: {
+      message: "Recentes",
+    },
+    topics: {
+      message: "Tópicos",
+    },
+    mostReadWeekly: {
+      message: "Mais lidos da semana",
+    },
   },
 };

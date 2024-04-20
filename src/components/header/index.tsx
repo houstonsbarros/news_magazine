@@ -2,11 +2,14 @@ import styled from "styled-components";
 import Button from "../button";
 import I18n from "../i18n/i18n";
 import Translator from "../i18n/translator";
+import { useNavigate } from "react-router-dom";
 
 export default function Header() {
+  const navigate = useNavigate();
+
   return (
     <Container>
-      <Logo>
+      <Logo onClick={() => navigate("/")}>
         <span className="white">News</span>
         <span className="gray">Magazine</span>
       </Logo>
@@ -15,9 +18,11 @@ export default function Header() {
         <Link href="/recentes">
           <Translator path="header.recent" />
         </Link>
+
         <Link href="/mais-lidos-da-semana">
           <Translator path="header.weekly" />
         </Link>
+
         <Link href="/topicos">
           <Translator path="header.topics" />
         </Link>
@@ -27,6 +32,7 @@ export default function Header() {
         <Button>
           <Translator path="header.signIn" />
         </Button>
+
         <I18n />
       </Buttons>
     </Container>
@@ -52,6 +58,8 @@ const Logo = styled.div`
   justify-content: center;
   font-size: ${(props) => props.theme.font.sizes.medium};
   font-weight: ${(props) => props.theme.font.weight.bold};
+  cursor: pointer;
+  user-select: none;
 
   .white {
     color: ${(props) => props.theme.colors.gray[300]};
