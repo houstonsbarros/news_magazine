@@ -1,15 +1,18 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom"
-import Home from '@/pages/home'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./app/home";
+import theme from "./styles/theme";
+import { ThemeProvider } from "styled-components";
 
 function App() {
-
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
-    </BrowserRouter>
-  )
+    <ThemeProvider theme={theme}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </BrowserRouter>
+    </ThemeProvider>
+  );
 }
 
-export default App
+export default App;
