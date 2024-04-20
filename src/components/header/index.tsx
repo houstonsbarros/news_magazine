@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import Button from "../button";
+import I18n from "../i18n/i18n";
+import Translator from "../i18n/translator";
 
 export default function Header() {
   return (
@@ -10,13 +12,22 @@ export default function Header() {
       </Logo>
 
       <Links>
-        <Link href="/news">RECENTES</Link>
-        <Link href="/sports">MAIS LIDOS DA SEMANA</Link>
-        <Link href="/entertainment">TÓPICOS</Link>
+        <Link href="/recentes">
+          <Translator path="header.recent" />
+        </Link>
+        <Link href="/mais-lidos-da-semana">
+          <Translator path="header.weekly" />
+        </Link>
+        <Link href="/topicos">
+          <Translator path="header.topics" />
+        </Link>
       </Links>
 
       <Buttons>
-        <Button>Fazer login</Button>
+        <Button>
+          <Translator path="header.signIn" />
+        </Button>
+        <I18n />
       </Buttons>
     </Container>
   );
